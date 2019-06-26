@@ -51,7 +51,7 @@ public class ArrayHeap {
 
     /**
      * 堆排序
-     * 时间复杂度：O(nlogn)
+     * 时间复杂度：O(n*log(n))
      * 空间复杂度：O(n)
      *
      * @param num_array 待排序的堆
@@ -76,6 +76,11 @@ public class ArrayHeap {
         }
     }
 
+    /**
+     * 构建最大堆，是堆排序算法中初始化的过程，目的是将堆首次调整到预期状态
+     * @param array
+     * @param heapSize
+     */
     public void buildHeap(int[] array, int heapSize){
         for(int i=(heapSize-1)/2; i>=0; i--){
             adjustHeap(array, i, heapSize);
@@ -84,7 +89,8 @@ public class ArrayHeap {
 
     /**
      * 堆调整：维护堆状态至 符合大根堆的性质
-     *
+     * 需要注意的是，在第一次置换root 和 Array[heapSize-1]之后，根节点的值是比left or right小的
+     * 所以此时必须将这个值‘沉’到底部，因此需要递归调用adjustHeap(array, max(left, right), limit)
      * @param t_array 待排序的堆
      * @param index   从该节点依次向上调整堆状态
      * @param limit  需要调整的堆的长度
@@ -93,7 +99,7 @@ public class ArrayHeap {
         //调整堆的状态
         int left = index * 2 + 1;
         int right = index * 2 + 2;
-        int max = -1;
+        int max;
         if(left <= limit && t_array[left]>t_array[index]){
             max = left;
         }
@@ -116,7 +122,7 @@ public class ArrayHeap {
         ArrayHeap heap = new ArrayHeap(10);
         int[] a = {4, 1, 66, 23, 7, 192, 6, 12, 91, 45, 2, 19, 81, 3, 5, 123, 8, 1221, 9};
         heap.HeapSort(a);
-
+        System.out.println("中文字体显示");
         System.out.println(Arrays.toString(a));
     }
 }
