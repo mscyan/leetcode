@@ -61,6 +61,10 @@ public class UnionFind {
         }
     }
 
+    public boolean isConnected(int g1, int g2){
+        return this.unionSearch(g1) == this.unionSearch(g2);
+    }
+
     public static void main(String[] args){
         //           0  1  2  3  4  5  6  7  8  9  10 11
         int[] arr = {0, 1, 1, 0, 2, 0, 6, 4, 0, 6, 9, 7};
@@ -71,7 +75,12 @@ public class UnionFind {
 //        System.out.println(unionFind.unionSearch(7));
 //        System.out.println(unionFind.unionSearch(9));
 
-        System.out.println(unionFind.unionSearch(11));
-        System.out.println(unionFind.unionSearch(11));
+//        System.out.println(unionFind.unionSearch(11));
+//        System.out.println(unionFind.unionSearch(11));
+
+//        System.out.println(unionFind.isConnected(5, 9));
+        System.out.println(unionFind.unionSearch(9));
+        unionFind.join(5, 9);
+        System.out.println(unionFind.isConnected(5, 9));
     }
 }
