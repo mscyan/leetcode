@@ -1,5 +1,6 @@
 package graph;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -9,7 +10,10 @@ import java.util.List;
 public class Node {
 
     public int val;
-    public List<Node> neighbors;
+    public List<Node> neighbors = new ArrayList<>();
+    public int color;
+    public int d;
+    public Node parent;
 
     public Node(){}
 
