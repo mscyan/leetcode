@@ -26,28 +26,28 @@ public class ArrayHeap {
         root = new int[capacity];
     }
 
-    public void insert(int num) {
-        if (this.size == this.capacity) {
-            //扩容
-        } else {
-            root[size] = num;
-            size++;
-            for (int i = size / 2; i >= 0; i--) {
-                adjustHeap(root, i, size);
-            }
-        }
-    }
-
-    public int top() {
-        if (size > 0) {
-            return root[0];
-        }
-        return -1;
-    }
-
-    public void pop() {
-
-    }
+//    public void insert(int num) {
+//        if (this.size == this.capacity) {
+//            //扩容
+//        } else {
+//            root[size] = num;
+//            size++;
+//            for (int i = size / 2; i >= 0; i--) {
+//                adjustHeap(root, i, size);
+//            }
+//        }
+//    }
+//
+//    public int top() {
+//        if (size > 0) {
+//            return root[0];
+//        }
+//        return -1;
+//    }
+//
+//    public void pop() {
+//
+//    }
 
     /**
      * 堆排序
@@ -122,7 +122,6 @@ public class ArrayHeap {
         ArrayHeap heap = new ArrayHeap(10);
         int[] a = {4, 1, 66, 23, 7, 192, 6, 12, 91, 45, 2, 19, 81, 3, 5, 123, 8, 1221, 9};
         heap.HeapSort(a);
-        System.out.println("中文字体显示");
         System.out.println(Arrays.toString(a));
     }
 }

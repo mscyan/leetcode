@@ -14,6 +14,7 @@ public class Node {
     public int color;
     public int d;
     public Node parent;
+    public int f;
 
     public Node(){}
 
