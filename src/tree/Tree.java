@@ -16,9 +16,34 @@ public class Tree {
             }
             p = inStack.pop();//最左孩子
             System.out.println(p.value);
-//            if(p.right != null){
+            if(p.right != null){
                 p = p.right;
-//            }
+            }
+        }
+    }
+
+    void postOrder(TreeNode root){
+        //后序遍历 left -> right -> root
+        Stack<TreeNode> postStack = new Stack<>();
+        postStack.push(root);
+
+        TreeNode cur = null;
+        TreeNode pre = null;
+        while(!postStack.empty()){
+            cur = postStack.peek();
+            if( (cur != null && (cur.left == pre || cur.right == pre)) ||  (cur.left == null && cur.right == null)){
+                System.out.print(cur.value + " ");
+                pre = cur;
+                postStack.pop();
+            }
+            else{
+                if(cur.right != null){
+                    postStack.push(cur.right);
+                }
+                if(cur.left != null){
+                    postStack.push(cur.left);
+                }
+            }
         }
     }
 
@@ -42,6 +67,7 @@ public class Tree {
 
         ll.left = new TreeNode(8);
 
-        new Tree().inOrder(root);
+//        new Tree().inOrder(root);
+        new Tree().postOrder(root);
     }
 }
