@@ -12,7 +12,7 @@ public class lc_30_findSubstring {
 
     public List<Integer> findSubstring(String s, String[] words){
         List<Integer> list = new ArrayList<>();
-
+        
 
         return list;
     }
