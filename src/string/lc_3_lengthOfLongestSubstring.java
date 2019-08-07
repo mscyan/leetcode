@@ -22,6 +22,9 @@ public class lc_3_lengthOfLongestSubstring {
         while(right < s.length()){
             char c = s.charAt(right);
             if(charMap.containsKey(c)){
+                //如果 两个相同字符相邻，则直接取get(c)+1即可
+                //但是如果这两个字符之间有其他字符修改了left的位置，此时get(c)+1无法得出正确位置
+                //需要直接使用被重置之后的left的下标，如abcddeaf，dd就修改了left的位置，但get('a')还是0
                 left = Math.max(charMap.get(c)+1, left);
                 charMap.put(c, right);
             }
@@ -38,7 +41,7 @@ public class lc_3_lengthOfLongestSubstring {
     public static void main(String[] args){
 
         //          0123456789
-        String s = "tmmzuxt";
+        String s = "abbba";
 
         System.out.println(new lc_3_lengthOfLongestSubstring().lengthOfLongestSubstring(s));
     }
