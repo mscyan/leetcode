@@ -4,7 +4,7 @@ import java.util.Stack;
 
 public class Tree {
 
-    void inOrder(TreeNode root){
+    public void inOrder(TreeNode root){
         if(root == null)
             return;
         Stack<TreeNode> inStack = new Stack();
@@ -22,7 +22,7 @@ public class Tree {
         }
     }
 
-    void postOrder(TreeNode root){
+    public void postOrder(TreeNode root){
         //后序遍历 left -> right -> root
         Stack<TreeNode> postStack = new Stack<>();
         postStack.push(root);
