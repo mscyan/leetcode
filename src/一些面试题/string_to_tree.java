@@ -1,7 +1,7 @@
 package 一些面试题;
 
-import tree.Tree;
-import tree.TreeNode;
+import util.tree.Tree;
+import util.tree.TreeNode;
 
 import java.util.Stack;
 

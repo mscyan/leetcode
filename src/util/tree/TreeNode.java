@@ -1,4 +1,4 @@
-package tree;
+package util.tree;
 
 public class TreeNode {
 

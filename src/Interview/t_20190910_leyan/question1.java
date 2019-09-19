@@ -10,6 +10,7 @@ public class question1 {
      * 格式： [word] [次数]
      * @param args
      */
+    //某些情况会爆内存
     public static void main(String[] args){
 
         String path = "C:\\Users\\yanchao\\IdeaProjects\\leetcode\\src\\Interview\\t_20190910_leyan\\article.txt";
@@ -19,7 +20,7 @@ public class question1 {
             BufferedReader bufferedReader = new BufferedReader(reader);
             String sentence = null;
             while((sentence = bufferedReader.readLine()) != null){
-                sb.append(sentence);
+                sb.append(sentence).append(";");
             }
         } catch(FileNotFoundException e){
             e.printStackTrace();
